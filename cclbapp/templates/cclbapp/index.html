@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Land Grab</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+
+    {% comment %} <link rel="stylesheet" href="styles.css"> {% endcomment %}
+
+
+
+    
+</head>
+
+<body>
+
+    
+  <div class="container">
+        
+    <div class="navbar">                       
+        
+      <div class="content">
+        <p>Land Grab: Real Estate Investing For The Everyday Individual</p>
+        <h1>Start Grabbing</h1>
+        <a href="{% url 'cclbapp:properties' %}" class="button">Properties</a>
+            
+        <a href="{% url 'cclbapp:howtograb' %}" class="button">How To Grab</a>      
+       
+        {% if user.is_authenticated %}
+      
+          <div class="nav-item">
+            <a href="{% url 'cclbapp:logout' %}" class="button">Logout</a>
+               
+          </div>  
+        {% else %}
+
+          <div class="nav-item">
+            <a href="{% url 'cclbapp:login' %}" class="button">Login</a>
+        
+          </div>
+        {% endif %}
+            
+      </div>
+
+      <img src="{% static '/images/rightimage.jpg' %}" class="feature-img">
+
+    </div>
+
+  </div>
+
+
+</body>
+</html>
+
